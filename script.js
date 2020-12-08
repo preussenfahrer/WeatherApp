@@ -3,7 +3,18 @@
 // City search functionality for side bar
 function onSearch() {
     // var cityName = input value from Search Bar
+
     // jQuery Ajax call to another server [request to get current weather data from API]
+    var APIKey = "1676721fa532ea2e5a0ab18034cd5a47";
+    var queryURL = "https://openweathermap.org/api/one-call-api";
+
+    $.ajax({
+        url: queryURL,
+        method: "GET",
+    }).then(function(response){
+        console.log(queryURL);
+    })
+    
     // getElementById [jumbotron elements for wind, etc]
     // insert into each element correct data from response
     //var array = getFromStorage("cityList")
