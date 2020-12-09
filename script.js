@@ -1,25 +1,45 @@
+
+
 $(document).ready(function () {
-    var APIKey = "1676721fa532ea2e5a0ab18034cd5a47";
+    
+    // One Call API for weather data, make variable for user unique inputs
+    var APIKey = "abc8e531b8c6f521bced71a3c720b1a7";
+    var queryURL =  "https://api.openweathermap.org/data/2.5/onecall?appid=" + APIKey; 
+    var currentWeatherURL = "https://api.openweathermap.org/data/2.5/weather?appid=" + APIKey;
 
-    $("#search-bar").on("click", citySearch)
+    console.log($("search-bar"));
+    $("#search-bar").click(citySearch)
 
-    // search for city in side bar
-    function citySearch() {
+    // search for city in side bar and get data in Console
+    function citySearch(e) {
+        console.log(e);
+        if(e){
+            e.preventDefault();
+        }
         console.log("search button clicked")
         // button var
         var searchButton = $("<button>")
         // userInput
-        var getCity = $(this).siblings("#search-bar").val()
-        // var queryURL = something is not working with URL
+        var city = $("#search-input").val()
 
         // jQuery Ajax call to another server [request to get current weather data from API]
         $.ajax({
-            url: queryURL,
+            url: currentWeatherURL + "&q=" + city,
             method: "GET",
         }).then(function (response) {
-            console.log(queryURL);
+            console.log(response);
             // current weather call from API
-            
+            return $.ajax({
+                url: queryURL + "&lat=" + response.coord.lat + "&lon=" + response.coord.lon,
+                method: "GET",
+            }).then(function(onecallresponse){
+                console.log(onecallresponse);
+                $("#city-name").text("Current City: " + onecallresponse.name)
+                $("#temperature").text("Current Temperature: " + onecallresponse.current.temp);
+                $("#humidity").text("Humidity: " + onecallresponse.current.humidity);
+                $("#wind-speed").text("Wind Speed: " + onecallresponse.current.wind_speed);
+                $("#uv-index").text("Current UV-Index: " + onecallresponse.current.uvi);
+            })
         })
 
     }
