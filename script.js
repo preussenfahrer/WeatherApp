@@ -1,42 +1,54 @@
-
-
-// City search functionality for side bar
-function onSearch() {
-    // var cityName = input value from Search Bar
-
-    // jQuery Ajax call to another server [request to get current weather data from API]
+$(document).ready(function () {
     var APIKey = "1676721fa532ea2e5a0ab18034cd5a47";
-    var queryURL = "https://openweathermap.org/api/one-call-api";
 
-    $.ajax({
-        url: queryURL,
-        method: "GET",
-    }).then(function(response){
-        console.log(queryURL);
-    })
-    
+    $("#search-bar").on("click", citySearch)
+
+    // search for city in side bar
+    function citySearch() {
+        console.log("search button clicked")
+        // button var
+        var searchButton = $("<button>")
+        // userInput
+        var getCity = $(this).siblings("#search-bar").val()
+        // var queryURL = something is not working with URL
+
+        // jQuery Ajax call to another server [request to get current weather data from API]
+        $.ajax({
+            url: queryURL,
+            method: "GET",
+        }).then(function (response) {
+            console.log(queryURL);
+            // current weather call from API
+            
+        })
+
+    }
+
     // getElementById [jumbotron elements for wind, etc]
     // insert into each element correct data from response
     //var array = getFromStorage("cityList")
     // array.push(cityName)
     // setInStorage("cityList", array)
-}
 
-// Store previous searches in dropdown bar (should be local storage)
-function getFromStorage(key) {
-    var data = window.localStorage.getItem(key);
-    if (!data) {
-        // Assumes array is stored in localStorage
-        return [];
-    } else {
-        return JSON.parse(data);
+    // Store previous searches in dropdown bar (should be local storage)
+    function getFromStorage(key) {
+        var data = window.localStorage.getItem(key);
+        if (!data) {
+            // Assumes array is stored in localStorage
+            return [];
+        } else {
+            return JSON.parse(data);
+        }
     }
-}
 
-function setInStorage(key, value) {
-    value = JSON.stringify(value);
-    window.localStorage.setItem(key, value);
-}
+    function setInStorage(key, value) {
+        value = JSON.stringify(value);
+        window.localStorage.setItem(key, value);
+    }
+
+})
+
+// City search functionality for side bar
 
 
 // example of calling localStorage and console.log localStorage
