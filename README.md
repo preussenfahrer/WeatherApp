@@ -7,3 +7,6 @@ The user is prompted on the left to enter a city in the United States. Once the 
 Displayed below the current temperature is a 5-Day forecast, here shown in the template format.
 
 Currently in development is the local storage abilities for the application. Once this is effectively programmed, the user will also be able to see the previous cities that they searched for.
+
+![image](https://user-images.githubusercontent.com/70812339/101706007-240d2c00-3a80-11eb-8908-c9e5daf92cf6.png)
+
