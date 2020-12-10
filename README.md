@@ -12,4 +12,6 @@ Currently in development is the local storage abilities for the application. Onc
 
 The application can also be used on various devices, as shown in the picture below.
 
+![image](https://user-images.githubusercontent.com/70812339/101706380-d93fe400-3a80-11eb-9197-571de5c279fd.png)
 
+As stated, the application is still in development. Once I am more able to implement local storage and increase the functionality, the app will be more user-friendly.
