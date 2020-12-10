@@ -10,3 +10,6 @@ Currently in development is the local storage abilities for the application. Onc
 
 ![image](https://user-images.githubusercontent.com/70812339/101706007-240d2c00-3a80-11eb-8908-c9e5daf92cf6.png)
 
+The application can also be used on various devices, as shown in the picture below.
+
+
