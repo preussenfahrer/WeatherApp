@@ -1,3 +1,9 @@
 # WeatherApp
 WeatherApp is a JavaScript and jQuery application that will display the temperature, wind-speed, UV-index, and humidity for a city (which is typed into the search bad on the left-hand side of the screen). The application uses an API provided by the Open Weather Map as a means to retrieve and display data in a variety of categories, including a five-day planner. The application is styled with Bootstraps's "Materia" theme to provide a bright and user-friendly experience for those using the application.
 
+# Use
+The user is prompted on the left to enter a city in the United States. Once the "search" button is clicked, the city name (should) be displayed to the right, with the temperature and various other data below it.
+
+Displayed below the current temperature is a 5-Day forecast, here shown in the template format.
+
+Currently in development is the local storage abilities for the application. Once this is effectively programmed, the user will also be able to see the previous cities that they searched for.
